@@ -18,7 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserModule,// 测试一下
     FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
     AppRoutingModule,
     HttpModule,
