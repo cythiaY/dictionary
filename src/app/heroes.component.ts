@@ -6,8 +6,8 @@ import { HeroService } from './hero.service';
 
 @Component({
   selector: 'my-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./../heroes.css']
+  templateUrl: './../templates/heroes.component.html',
+  styleUrls: ['./../css/heroes.css']
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
