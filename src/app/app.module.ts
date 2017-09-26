@@ -8,10 +8,10 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { DashboardComponent } from './dashboard.component';
-import { HeroService } from './hero.service';
+import { NounsComponent } from './noun.component';
+import { WordDetailComponent } from './word-detail.component';
+import { VerbsComponent } from './verbs.component';
+import { WordService } from './word.service';
 import { HeroSearchComponent } from './hero-search.component';
 import { HeroSearchService } from './hero-search.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,12 +26,12 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    DashboardComponent,
+    NounsComponent,
+    WordDetailComponent,
+    VerbsComponent,
     HeroSearchComponent
   ],
-  providers: [HeroService, HeroSearchService],
+  providers: [WordService, HeroSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

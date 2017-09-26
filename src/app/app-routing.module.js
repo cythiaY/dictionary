@@ -8,26 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var heroes_component_1 = require("./heroes.component");
-var dashboard_component_1 = require("./dashboard.component");
-var hero_detail_component_1 = require("./hero-detail.component");
+var noun_component_1 = require("./noun.component");
+var verbs_component_1 = require("./verbs.component");
+var word_detail_component_1 = require("./word-detail.component");
 var routes = [
     {
-        path: 'heroes',
-        component: heroes_component_1.HeroesComponent
+        path: 'nouns',
+        component: noun_component_1.NounsComponent
     },
     {
-        path: 'dashboard',
-        component: dashboard_component_1.DashboardComponent
+        path: 'verbs',
+        component: verbs_component_1.VerbsComponent
     },
     {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/nouns',
         pathMatch: 'full'
     },
     {
         path: 'detail/:id',
-        component: hero_detail_component_1.HeroDetailComponent
+        component: word_detail_component_1.WordDetailComponent
     }
 ];
 var AppRoutingModule = (function () {

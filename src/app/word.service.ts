@@ -6,18 +6,18 @@ import 'rxjs/add/operator/toPromise';
 import { Word } from './word';
 
 @Injectable()
-export class HeroService {
+export class WordService {
     private heroesUrl = 'api/words';
     private headers = new Headers({ 'Content-Type': 'application/json' });
     constructor(private http: Http) { }
 
-    getHeroes(): Promise<Word[]> {
+    getWords(): Promise<Word[]> {
         return this.http.get(this.heroesUrl)
             .toPromise()
             .then(response => response.json().data as Word[])
             .catch(this.handleError);
     }
-    getOneHero(id: number): Promise<Word> {
+    getWord(id: number): Promise<Word> {
         const url = `${this.heroesUrl}/${id}`;
         return this.http.get(url)
             .toPromise()

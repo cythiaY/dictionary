@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HeroesComponent } from './heroes.component';
-import { DashboardComponent } from './dashboard.component';
-import { HeroDetailComponent } from './hero-detail.component';
+import { NounsComponent } from './noun.component';
+import { VerbsComponent } from './verbs.component';
+import { WordDetailComponent } from './word-detail.component';
 
 const routes: Routes = [
     {
-        path: 'heroes',
-        component: HeroesComponent
+        path: 'nouns',
+        component: NounsComponent
     },
     {
-        path: 'dashboard',
-        component: DashboardComponent
+        path: 'verbs',
+        component: VerbsComponent
     },
-    {   // 重定向，默认情况下定位到dashboard
+    {   // 重定向，默认情况下定位到nouns
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/nouns',
         pathMatch: 'full'
     },
     {
         path: 'detail/:id',
-        component: HeroDetailComponent
+        component: WordDetailComponent
     }
 ];
 

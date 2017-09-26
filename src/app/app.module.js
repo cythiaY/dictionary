@@ -14,10 +14,10 @@ var http_1 = require("@angular/http");
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
 var in_memory_data_service_1 = require("./in-memory-data.service");
 var app_component_1 = require("./app.component");
-var heroes_component_1 = require("./heroes.component");
-var hero_detail_component_1 = require("./hero-detail.component");
-var dashboard_component_1 = require("./dashboard.component");
-var hero_service_1 = require("./hero.service");
+var noun_component_1 = require("./noun.component");
+var word_detail_component_1 = require("./word-detail.component");
+var verbs_component_1 = require("./verbs.component");
+var word_service_1 = require("./word.service");
 var hero_search_component_1 = require("./hero-search.component");
 var hero_search_service_1 = require("./hero-search.service");
 var app_routing_module_1 = require("./app-routing.module");
@@ -37,12 +37,12 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            heroes_component_1.HeroesComponent,
-            hero_detail_component_1.HeroDetailComponent,
-            dashboard_component_1.DashboardComponent,
+            noun_component_1.NounsComponent,
+            word_detail_component_1.WordDetailComponent,
+            verbs_component_1.VerbsComponent,
             hero_search_component_1.HeroSearchComponent
         ],
-        providers: [hero_service_1.HeroService, hero_search_service_1.HeroSearchService],
+        providers: [word_service_1.WordService, hero_search_service_1.HeroSearchService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

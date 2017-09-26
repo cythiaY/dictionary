@@ -2,23 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Word } from './word';
-import { HeroService } from './hero.service';
+import { WordService } from './word.service';
 
 @Component({
   selector: 'my-heroes',
-  templateUrl: './../templates/heroes.component.html',
-  styleUrls: ['./../css/heroes.css']
+  templateUrl: './../templates/words.component.html',
+  styleUrls: ['./../css/words.css']
 })
-export class HeroesComponent implements OnInit {
+export class NounsComponent implements OnInit {
   words: Word[];
   selected: Word;
 
   selectedH(word: Word): void {
     this.selected = word;
   }
-  constructor(private heroService: HeroService, private router: Router) { }
+  constructor(private heroService: WordService, private router: Router) { }
   getHeroes(): void {
-    this.heroService.getHeroes().then(words => this.words = words);
+    this.heroService.getWords().then(words => this.words = words.filter(word => word.type === 'n'));
   }
   ngOnInit(): void {
     this.getHeroes();

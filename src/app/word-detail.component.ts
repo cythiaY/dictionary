@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
 import { Word } from './word';
-import { HeroService } from './hero.service';
+import { WordService } from './word.service';
 
 @Component({
     selector: 'hero-detail',
@@ -12,16 +12,16 @@ import { HeroService } from './hero.service';
     styleUrls: ['./../css/detail.css']
 })
 
-export class HeroDetailComponent implements OnInit {
+export class WordDetailComponent implements OnInit {
     @Input() word: Word;
     constructor(
         private route: ActivatedRoute,
-        private heroService: HeroService,
+        private heroService: WordService,
         private location: Location
 
     ) { }
     ngOnInit(): void {
-        this.route.paramMap.switchMap((params: ParamMap) => this.heroService.getOneHero(+params.get('id')))
+        this.route.paramMap.switchMap((params: ParamMap) => this.heroService.getWord(+params.get('id')))
             .subscribe(word => this.word = word);
     }
     goBack(): void {
