@@ -4,20 +4,19 @@ var InMemoryDataService = (function () {
     function InMemoryDataService() {
     }
     InMemoryDataService.prototype.createDb = function () {
-        var heroes = [
-            { id: 10, name: 'Cythia' },
-            { id: 11, name: 'Mr. Nice' },
-            { id: 12, name: 'Narco' },
-            { id: 13, name: 'Bombasto' },
-            { id: 14, name: 'Celeritas' },
-            { id: 15, name: 'Magneta' },
-            { id: 16, name: 'RubberMan' },
-            { id: 17, name: 'Dynama' },
-            { id: 18, name: 'Dr IQ' },
-            { id: 19, name: 'Magma' },
-            { id: 20, name: 'Tornado' }
+        var words = [
+            { id: 1, english: 'gorgeous', explain: '极好的，称心的;', type: 'a' },
+            { id: 2, english: 'cherish', explain: '珍惜', type: 'v' },
+            { id: 3, english: 'gorgeous', explain: '极好的，称心的;', type: 'a' },
+            { id: 4, english: 'cherish', explain: '珍惜', type: 'v' },
+            { id: 5, english: 'gorgeous', explain: '极好的，称心的;', type: 'a' },
+            { id: 6, english: 'cherish', explain: '珍惜', type: 'v' },
+            { id: 7, english: 'gorgeous', explain: '极好的，称心的;', type: 'a' },
+            { id: 8, english: 'cherish', explain: '珍惜', type: 'v' },
+            { id: 9, english: 'gorgeous', explain: '极好的，称心的;', type: 'a' },
+            { id: 10, english: 'cherish', explain: '珍惜', type: 'v' }
         ];
-        return { heroes: heroes };
+        return { words: words };
     };
     return InMemoryDataService;
 }());

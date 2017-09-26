@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
     selector: 'my-app',
     template: `
         <h1>{{title}}</h1>
+        <hero-search></hero-search>
         <nav>
         <a routerLink="/heroes">N O U N</a>
         <a routerLink="/dashboard">V E R B</a>
@@ -15,5 +16,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-    title: 'Tour Of Heroes';
+    title: 'Time and Word';
 }

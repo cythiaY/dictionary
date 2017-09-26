@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import { Hero } from './hero';
+import { Word } from './word';
 import { HeroSearchService } from './hero-search.service';
 @Component({
     selector: 'hero-search',
@@ -18,7 +18,7 @@ import { HeroSearchService } from './hero-search.service';
 })
 
 export class HeroSearchComponent implements OnInit {
-    heroes: Observable<Hero[]>;
+    heroes: Observable<Word[]>;
     private searchTerms = new Subject<string>();
     constructor(private router: Router, private heroSearchService: HeroSearchService) { }
     search(term: string): void {
@@ -30,15 +30,15 @@ export class HeroSearchComponent implements OnInit {
             .distinctUntilChanged()   // ignore if next search term is same as previous
             .switchMap(term => term   // switch to new observable each time the term changes
                 ? this.heroSearchService.search(term)
-                : Observable.of<Hero[]>([]))
+                : Observable.of<Word[]>([]))
             .catch(error => {
                 // TODO: add real error handling
                 console.log(error);
-                return Observable.of<Hero[]>([]);
+                return Observable.of<Word[]>([]);
             });
     }
-    gotoDetail(hero: Hero): void {
-        this.router.navigate(['/detail', hero.id]);
+    gotoDetail(word: Word): void {
+        this.router.navigate(['/detail', word.id]);
     }
 }
 

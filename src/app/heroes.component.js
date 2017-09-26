@@ -17,12 +17,12 @@ var HeroesComponent = (function () {
         this.heroService = heroService;
         this.router = router;
     }
-    HeroesComponent.prototype.selectedH = function (hero) {
-        this.selected = hero;
+    HeroesComponent.prototype.selectedH = function (word) {
+        this.selected = word;
     };
     HeroesComponent.prototype.getHeroes = function () {
         var _this = this;
-        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
+        this.heroService.getHeroes().then(function (words) { return _this.words = words; });
     };
     HeroesComponent.prototype.ngOnInit = function () {
         this.getHeroes();
@@ -30,20 +30,20 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.gotoDetail = function () {
         this.router.navigate(['detail', this.selected.id]);
     };
-    HeroesComponent.prototype.add = function (name) {
+    HeroesComponent.prototype.add = function (english) {
         var _this = this;
-        name = name.trim();
-        if (!name) {
+        english = english.trim();
+        if (!english) {
             return;
         }
-        this.heroService.createHero(name)
-            .then(function (hero) { _this.heroes.push(hero); _this.selected = null; });
-        console.log(this.heroes);
+        this.heroService.createHero(english)
+            .then(function (word) { _this.words.push(word); _this.selected = null; });
+        console.log(this.words);
     };
-    HeroesComponent.prototype.delete = function (hero) {
+    HeroesComponent.prototype.delete = function (word) {
         var _this = this;
-        this.heroService.deleteHero(hero.id)
-            .then(function () { _this.heroes = _this.heroes.filter(function (h) { return h !== hero; }); if (_this.selected === hero) {
+        this.heroService.deleteHero(word.id)
+            .then(function () { _this.words = _this.words.filter(function (h) { return h !== word; }); if (_this.selected === word) {
             _this.selected = null;
         } ; });
     };

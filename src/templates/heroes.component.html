@@ -1,15 +1,16 @@
-<h2 *ngIf="heroes">{{heroes.length}} heroes!</h2>
+<h2 *ngIf="words">{{words.length}} words!</h2>
 <ul>
-  <li *ngFor="let hero of heroes" >
-    <span class="hid">{{hero.id}}</span> <span class="hname" (click)="selectedH(hero)" [class.selected]="hero===selected">{{hero.name}}</span>
-    <button (click)="delete(hero)">Delete</button>
+  <li *ngFor="let word of words" >
+    <span class="henglish" (click)="selectedH(word)" [class.selected]="word===selected">{{word.english}}</span>
+    <span class="hexplain">{{word.explain}}</span><span class="htype">{{word.type}}</span>
+    <button (click)="delete(word)">Delete</button>
   </li>
 </ul>
 <div *ngIf="selected">
-  <h2>{{selected.name | uppercase}} is my hero</h2>
+  <h2>{{selected.english | uppercase}} is my word</h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
 <div>
-  <label>Hero's name:</label><input #heroName />
-  <button (click)="add(heroName.value);heroName.value=''">Add</button>
+  <label>Hero's english:</label><input #wordName />
+  <button (click)="add(wordName.value);wordName.value=''">Add</button>
 </div>

@@ -15,7 +15,7 @@ require("rxjs/add/operator/toPromise");
 var HeroService = (function () {
     function HeroService(http) {
         this.http = http;
-        this.heroesUrl = 'api/heroes';
+        this.heroesUrl = 'api/words';
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
     }
     HeroService.prototype.getHeroes = function () {
@@ -35,15 +35,15 @@ var HeroService = (function () {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     };
-    HeroService.prototype.update = function (hero) {
-        var url = this.heroesUrl + "/" + hero.id;
-        return this.http.put(url, JSON.stringify(hero), { headers: this.headers })
+    HeroService.prototype.update = function (word) {
+        var url = this.heroesUrl + "/" + word.id;
+        return this.http.put(url, JSON.stringify(word), { headers: this.headers })
             .toPromise()
-            .then(function () { return hero; })
+            .then(function () { return word; })
             .catch(this.handleError);
     };
-    HeroService.prototype.createHero = function (name) {
-        return this.http.post(this.heroesUrl, JSON.stringify({ name: name, id: 29 }), { headers: this.headers })
+    HeroService.prototype.createHero = function (english) {
+        return this.http.post(this.heroesUrl, JSON.stringify({ english: english, id: 29 }), { headers: this.headers })
             .toPromise()
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);

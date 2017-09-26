@@ -1,11 +1,11 @@
-<div *ngIf="hero">
-    <h2>{{hero.name}} details!</h2>
+<div *ngIf="word">
+    <h2>{{word.english}} details!</h2>
     <div>
-        <label>id: </label>{{hero.id}}
+        <label>id: </label>{{word.id}}
     </div>
     <div>
-        <label>name: </label>
-        <input [(ngModel)]="hero.name" placeholder="name"/>
+        <label>english: </label>
+        <input [(ngModel)]="word.english" placeholder="english"/>
     </div>
     <button (click)="goBack()">Back</button>
     <button (click)="save()">Save</button>

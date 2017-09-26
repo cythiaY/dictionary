@@ -14,11 +14,11 @@ var hero_service_1 = require("./hero.service");
 var DashboardComponent = (function () {
     function DashboardComponent(heroService) {
         this.heroService = heroService;
-        this.heroes = [];
+        this.words = [];
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.heroService.getHeroes().then(function (hero) { return _this.heroes = hero.slice(1, 5); });
+        this.heroService.getHeroes().then(function (word) { return _this.words = word.slice(1, 5); });
     };
     return DashboardComponent;
 }());

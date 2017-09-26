@@ -18,7 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
-    BrowserModule,// 测试一下
+    BrowserModule,
     FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
     AppRoutingModule,
     HttpModule,
@@ -31,7 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
     DashboardComponent,
     HeroSearchComponent
   ],
-  providers: [HeroService,HeroSearchService],
+  providers: [HeroService, HeroSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

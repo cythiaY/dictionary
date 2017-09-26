@@ -1,20 +1,24 @@
 li {
-    list-style: none;
-    font-size: 16px;
-    color: #fff;
-    margin: 10px;
-  }
-  
-  .hid {
-    background-color: #EEE !important;
-    padding: 5px 10px;
-  }
-  
-  .hname {
-    background-color: #BBD8DC !important;
-    padding: 5px 10px;
-  }
-  
-  .selected {
-    color: #607D8B;
-  }
+  list-style: none;
+  font-size: 16px;
+  color: #fff;
+  margin: 10px;
+}
+
+.hid {
+  background-color: #EEE !important;
+  padding: 5px 10px;
+}
+
+.henglish {
+  background-color: #BBD8DC !important;
+  padding: 5px 10px;
+}
+
+.hexplain, .htype {
+  color: #607D8B;
+}
+
+.selected {
+  color: #607D8B;
+}

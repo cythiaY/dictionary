@@ -17,7 +17,7 @@ var HeroSearchService = (function () {
         this.http = http;
     }
     HeroSearchService.prototype.search = function (str) {
-        return this.http.get("api/heroes/?name=" + str)
+        return this.http.get("api/words/?english=" + str)
             .map(function (response) { return response.json().data; });
     };
     return HeroSearchService;

@@ -41,8 +41,8 @@ var HeroSearchComponent = (function () {
             return Observable_1.Observable.of([]);
         });
     };
-    HeroSearchComponent.prototype.gotoDetail = function (hero) {
-        this.router.navigate(['/detail', hero.id]);
+    HeroSearchComponent.prototype.gotoDetail = function (word) {
+        this.router.navigate(['/detail', word.id]);
     };
     return HeroSearchComponent;
 }());
