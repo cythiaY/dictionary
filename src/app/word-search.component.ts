@@ -9,27 +9,27 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
 import { Word } from './word';
-import { HeroSearchService } from './hero-search.service';
+import { WordSearchService } from './word-search.service';
 @Component({
-    selector: 'hero-search',
-    templateUrl: './../templates/hero-search.component.html',
+    selector: 'word-search',
+    templateUrl: './../templates/word-search.component.html',
     styleUrls: ['./../css/search.css'],
-    providers: [HeroSearchService]
+    providers: [WordSearchService]
 })
 
-export class HeroSearchComponent implements OnInit {
-    heroes: Observable<Word[]>;
+export class WordSearchComponent implements OnInit {
+    words: Observable<Word[]>;
     private searchTerms = new Subject<string>();
-    constructor(private router: Router, private heroSearchService: HeroSearchService) { }
+    constructor(private router: Router, private wordSearchService: WordSearchService) { }
     search(term: string): void {
         this.searchTerms.next(term);
     }
     ngOnInit(): void {
-        this.heroes = this.searchTerms
+        this.words = this.searchTerms
             .debounceTime(300)        // wait 300ms after each keystroke before considering the term
             .distinctUntilChanged()   // ignore if next search term is same as previous
             .switchMap(term => term   // switch to new observable each time the term changes
-                ? this.heroSearchService.search(term)
+                ? this.wordSearchService.search(term)
                 : Observable.of<Word[]>([]))
             .catch(error => {
                 // TODO: add real error handling

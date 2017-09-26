@@ -1,27 +1,22 @@
 import { Component } from '@angular/core';
 
 import { WordService } from './word.service';
+import { Word } from './word';
 
 @Component({
     selector: 'my-app',
-    template: `
-        <h1>{{title}}</h1>
-        <hero-search></hero-search>
-        <div>
-        <label>Word:</label><input #wordName />
-        <button (click)="add(wordName.value);wordName.value=''">Add</button>
-        </div>
-        <nav>
-        <a routerLink="/nouns">N O U N</a>
-        <a routerLink="/verbs">V E R B</a>
-        <a routerLink="/adjustive">A D J U S T I V E</a>
-        </nav>
-        <router-outlet><router-outlet>
-    `,
+    templateUrl: './../templates/app.html',
     styleUrls: ['./../css/app.css']
 })
 
 export class AppComponent {
     title: 'Time and Word';
-    
+    words: Word[] = [];
+    constructor(private wordService: WordService) { }
+    add(english: string, explain: string, type: string): void {
+        english = english.trim();
+        explain = explain.trim();
+        if (!english || !explain || !type) { alert('请填写完整的单词信息'); }
+        this.wordService.createWord(english, explain, type).then(word => this.words.push(word));
+    }
 }

@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 import { Word } from './word';
 
 @Injectable()
-export class HeroSearchService {
+export class WordSearchService {
     constructor(private http: Http) { }
     search(str: String): Observable<Word[]> {
         return this.http.get(`api/words/?english=${str}`)

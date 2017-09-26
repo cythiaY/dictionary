@@ -12,8 +12,8 @@ import { NounsComponent } from './noun.component';
 import { WordDetailComponent } from './word-detail.component';
 import { VerbsComponent } from './verbs.component';
 import { WordService } from './word.service';
-import { HeroSearchComponent } from './hero-search.component';
-import { HeroSearchService } from './hero-search.service';
+import { WordSearchComponent } from './word-search.component';
+import { WordSearchService } from './word-search.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AdjustiveComponent } from './adjustives.component';
 
@@ -30,10 +30,10 @@ import { AdjustiveComponent } from './adjustives.component';
     NounsComponent,
     WordDetailComponent,
     VerbsComponent,
-    HeroSearchComponent,
+    WordSearchComponent,
     AdjustiveComponent
   ],
-  providers: [WordService, HeroSearchService],
+  providers: [WordService, WordSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

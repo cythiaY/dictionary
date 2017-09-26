@@ -12,28 +12,21 @@ export class NounsComponent implements OnInit {
   words: Word[];
   selected: Word;
 
-  selectedH(word: Word): void {
+  selectedWord(word: Word): void {
     this.selected = word;
   }
-  constructor(private heroService: WordService, private router: Router) { }
-  getHeroes(): void {
-    this.heroService.getWords().then(words => this.words = words.filter(word => word.type === 'n'));
+  constructor(private wordService: WordService, private router: Router) { }
+  getNouns(): void {
+    this.wordService.getWords().then(words => this.words = words.filter(word => word.type === 'n'));
   }
   ngOnInit(): void {
-    this.getHeroes();
+    this.getNouns();
   }
   gotoDetail(): void {
     this.router.navigate(['detail', this.selected.id]);
   }
-  add(english: String): void {
-    english = english.trim();
-    if (!english) { return; }
-    this.heroService.createHero(english)
-      .then(word => { this.words.push(word); this.selected = null; });
-    console.log(this.words);
-  }
   delete(word: Word): void {
-    this.heroService.deleteHero(word.id)
+    this.wordService.deleteHero(word.id)
       .then(() => { this.words = this.words.filter(h => h !== word); if (this.selected === word) { this.selected = null; }; });
   }
 }

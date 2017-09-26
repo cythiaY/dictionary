@@ -5,19 +5,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var word_service_1 = require("./word.service");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(wordService) {
+        this.wordService = wordService;
+        this.words = [];
     }
+    AppComponent.prototype.add = function (english, explain, type) {
+        var _this = this;
+        english = english.trim();
+        explain = explain.trim();
+        if (!english || !explain || !type) {
+            alert('请填写完整的单词信息');
+        }
+        this.wordService.createWord(english, explain, type).then(function (word) { return _this.words.push(word); });
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n        <h1>{{title}}</h1>\n        <hero-search></hero-search>\n        <div>\n        <label>Word:</label><input #wordName />\n        <button (click)=\"add(wordName.value);wordName.value=''\">Add</button>\n        </div>\n        <nav>\n        <a routerLink=\"/nouns\">N O U N</a>\n        <a routerLink=\"/verbs\">V E R B</a>\n        <a routerLink=\"/adjustive\">A D J U S T I V E</a>\n        </nav>\n        <router-outlet><router-outlet>\n    ",
+        templateUrl: './../templates/app.html',
         styleUrls: ['./../css/app.css']
-    })
+    }),
+    __metadata("design:paramtypes", [word_service_1.WordService])
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

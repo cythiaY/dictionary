@@ -7,8 +7,7 @@ import { Word } from './word';
 import { WordService } from './word.service';
 
 @Component({
-    selector: 'hero-detail',
-    templateUrl: './../templates/hero-detail.html',
+    templateUrl: './../templates/word-detail.html',
     styleUrls: ['./../css/detail.css']
 })
 
@@ -16,18 +15,18 @@ export class WordDetailComponent implements OnInit {
     @Input() word: Word;
     constructor(
         private route: ActivatedRoute,
-        private heroService: WordService,
+        private wordService: WordService,
         private location: Location
 
     ) { }
     ngOnInit(): void {
-        this.route.paramMap.switchMap((params: ParamMap) => this.heroService.getWord(+params.get('id')))
+        this.route.paramMap.switchMap((params: ParamMap) => this.wordService.getWord(+params.get('id')))
             .subscribe(word => this.word = word);
     }
     goBack(): void {
         this.location.back();
     }
     save(): void {
-        this.heroService.update(this.word).then(() => this.goBack());
+        this.wordService.update(this.word).then(() => this.goBack());
     }
 }

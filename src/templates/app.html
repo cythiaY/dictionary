@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<word-search></word-search>
+<div>
+    <label>Word:</label><input #wordEg />
+    <label>Explain:</label><input #wordExplain />
+    <label>Type:</label>
+    <select #wordType>
+        <option value="n">noun</option>
+        <option value="v">verb</option>
+        <option value="a">adjustive</option>
+    </select>
+    <button (click)="add(wordEg.value,wordExplain.value,wordType.value);wordEg.value='';wordExplain.value='';wordType.value=''">Add</button>
+</div>
+<nav>
+    <a routerLink="/nouns">N O U N</a>
+    <a routerLink="/verbs">V E R B</a>
+    <a routerLink="/adjustive">A D J U S T I V E</a>
+</nav>
+<router-outlet><router-outlet>

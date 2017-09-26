@@ -11,7 +11,8 @@ export class InMemoryDataService implements InMemoryDbService {
             { id: 7, english: 'gorgeous', explain: '极好的，称心的;', type: 'a' },
             { id: 8, english: 'cherish', explain: '珍惜', type: 'v' },
             { id: 9, english: 'gorgeous', explain: '极好的，称心的;', type: 'a' },
-            { id: 10, english: 'cherish', explain: '珍惜', type: 'v' }
+            { id: 10, english: 'cherish', explain: '珍惜', type: 'v' },
+            { id: 11, english: 'icecream', explain: '冰淇淋', type: 'n' }
         ];
         return { words };
     }

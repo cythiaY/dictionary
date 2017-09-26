@@ -7,18 +7,18 @@ import { Word } from './word';
 
 @Injectable()
 export class WordService {
-    private heroesUrl = 'api/words';
+    private wordsUrl = 'api/words';
     private headers = new Headers({ 'Content-Type': 'application/json' });
     constructor(private http: Http) { }
 
     getWords(): Promise<Word[]> {
-        return this.http.get(this.heroesUrl)
+        return this.http.get(this.wordsUrl)
             .toPromise()
             .then(response => response.json().data as Word[])
             .catch(this.handleError);
     }
     getWord(id: number): Promise<Word> {
-        const url = `${this.heroesUrl}/${id}`;
+        const url = `${this.wordsUrl}/${id}`;
         return this.http.get(url)
             .toPromise()
             .then(response => response.json().data as Word)
@@ -29,20 +29,21 @@ export class WordService {
         return Promise.reject(error.message || error);
     }
     update(word: Word): Promise<Word> {
-        const url = `${this.heroesUrl}/${word.id}`;
+        const url = `${this.wordsUrl}/${word.id}`;
         return this.http.put(url, JSON.stringify(word), { headers: this.headers })
             .toPromise()
             .then(() => word)
             .catch(this.handleError);
     }
-    createHero(english: String): Promise<Word> {
-        return this.http.post(this.heroesUrl, JSON.stringify({ english: english, id: 29 }), { headers: this.headers })
+    createWord(newEnglish: String, newExplain: string, newType: string): Promise<Word> {
+        return this.http.post(this.wordsUrl, JSON.stringify({ english: newEnglish, explain: newExplain, type: newType })
+        , { headers: this.headers })
             .toPromise()
             .then(response => response.json().data as Word)
             .catch(this.handleError);
     }
     deleteHero(id: number): Promise<Word> {
-        const url = `${this.heroesUrl}/${id}`;
+        const url = `${this.wordsUrl}/${id}`;
         return this.http.delete(url, { headers: this.headers })
             .toPromise()
             .then(() => null)
