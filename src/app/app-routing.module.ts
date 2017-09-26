@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { NounsComponent } from './noun.component';
 import { VerbsComponent } from './verbs.component';
+import { AdjustiveComponent } from './adjustives.component';
 import { WordDetailComponent } from './word-detail.component';
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
         path: '',
         redirectTo: '/nouns',
         pathMatch: 'full'
+    },
+    {
+        path: 'adjustive',
+        component: AdjustiveComponent
     },
     {
         path: 'detail/:id',

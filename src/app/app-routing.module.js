@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var noun_component_1 = require("./noun.component");
 var verbs_component_1 = require("./verbs.component");
+var adjustives_component_1 = require("./adjustives.component");
 var word_detail_component_1 = require("./word-detail.component");
 var routes = [
     {
@@ -24,6 +25,10 @@ var routes = [
         path: '',
         redirectTo: '/nouns',
         pathMatch: 'full'
+    },
+    {
+        path: 'adjustive',
+        component: adjustives_component_1.AdjustiveComponent
     },
     {
         path: 'detail/:id',

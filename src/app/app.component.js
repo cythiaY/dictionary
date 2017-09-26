@@ -15,7 +15,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: "\n        <h1>{{title}}</h1>\n        <hero-search></hero-search>\n        <nav>\n        <a routerLink=\"/nouns\">N O U N</a>\n        <a routerLink=\"/verbs\">V E R B</a>\n        <a routerLink=\"/heroes\">A D J U S T I V E</a>\n        </nav>\n        <router-outlet><router-outlet>\n    ",
+        template: "\n        <h1>{{title}}</h1>\n        <hero-search></hero-search>\n        <div>\n        <label>Word:</label><input #wordName />\n        <button (click)=\"add(wordName.value);wordName.value=''\">Add</button>\n        </div>\n        <nav>\n        <a routerLink=\"/nouns\">N O U N</a>\n        <a routerLink=\"/verbs\">V E R B</a>\n        <a routerLink=\"/adjustive\">A D J U S T I V E</a>\n        </nav>\n        <router-outlet><router-outlet>\n    ",
         styleUrls: ['./../css/app.css']
     })
 ], AppComponent);

@@ -5,7 +5,6 @@ import { Word } from './word';
 import { WordService } from './word.service';
 
 @Component({
-  selector: 'my-heroes',
   templateUrl: './../templates/words.component.html',
   styleUrls: ['./../css/words.css']
 })

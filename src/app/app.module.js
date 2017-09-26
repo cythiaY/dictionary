@@ -21,6 +21,7 @@ var word_service_1 = require("./word.service");
 var hero_search_component_1 = require("./hero-search.component");
 var hero_search_service_1 = require("./hero-search.service");
 var app_routing_module_1 = require("./app-routing.module");
+var adjustives_component_1 = require("./adjustives.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -40,7 +41,8 @@ AppModule = __decorate([
             noun_component_1.NounsComponent,
             word_detail_component_1.WordDetailComponent,
             verbs_component_1.VerbsComponent,
-            hero_search_component_1.HeroSearchComponent
+            hero_search_component_1.HeroSearchComponent,
+            adjustives_component_1.AdjustiveComponent
         ],
         providers: [word_service_1.WordService, hero_search_service_1.HeroSearchService],
         bootstrap: [app_component_1.AppComponent]

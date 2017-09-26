@@ -15,6 +15,7 @@ import { WordService } from './word.service';
 import { HeroSearchComponent } from './hero-search.component';
 import { HeroSearchService } from './hero-search.service';
 import { AppRoutingModule } from './app-routing.module';
+import { AdjustiveComponent } from './adjustives.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { AppRoutingModule } from './app-routing.module';
     NounsComponent,
     WordDetailComponent,
     VerbsComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    AdjustiveComponent
   ],
   providers: [WordService, HeroSearchService],
   bootstrap: [AppComponent]

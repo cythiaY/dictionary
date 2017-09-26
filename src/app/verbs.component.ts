@@ -4,7 +4,6 @@ import { Word } from './word';
 import { WordService } from './word.service';
 
 @Component({
-    selector: 'my-dashboard',
     templateUrl: './../templates/words.component.html',
     styleUrls: ['./../css/words.css']
 })
