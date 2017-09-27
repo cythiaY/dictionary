@@ -14,5 +14,8 @@ export class VerbsComponent implements OnInit {
     ngOnInit(): void {
         this.wordService.getWords().then(words => this.words = words.filter((word) => word.type === 'v'));
     }
+    delete(word: Word): void {
+        this.wordService.deleteHero(word.id).then(() => { this.words = this.words.filter(target => target !== word);});
+    }
 }
 
