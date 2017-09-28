@@ -1,8 +1,10 @@
-<h2 *ngIf="words">{{words.length}} words!</h2>
-<ul>
-  <li *ngFor="let word of words">
-    <span class="henglish" [routerLink]="['/detail', word.id]"  [class.selected]="word===selected">{{word.english}}</span>
-    <span class="hexplain">{{word.explain}}</span><span class="htype">{{word.type}}</span>
-    <button (click)="delete(word)">Delete</button>
-  </li>
-</ul>
+<div class="words-box">
+  <h2 *ngIf="words">{{words.length}} words!</h2>
+  <ul>
+    <li *ngFor="let word of words">
+      <span class="henglish" [routerLink]="['/detail', word.id]" [class.selected]="word===selected">{{word.english}}</span>
+      <span class="hexplain">{{word.explain}}</span><span class="htype">{{word.type}}</span>
+      <button (click)="delete(word)">Delete</button>
+    </li>
+  </ul>
+</div>

@@ -1,7 +1,6 @@
 <div id="search-component">
-    <h4>Word Search</h4>
-    <input #searchBox id="search-box" (keyup)="search(searchBox.value);" />
-    <div>
-        <div *ngFor="let word of words | async" (click)="gotoDetail(word)" class="search-result">{{word.english}}</div>
+    <input #searchBox id="search-input" (keyup)="search(searchBox.value);" /> <label>Search</label>
+    <div class="search-box">
+        <div *ngFor="let word of words | async | slice:0:3" (click)="gotoDetail(word)" class="search-result">{{word.english}}</div>
     </div>
 </div>

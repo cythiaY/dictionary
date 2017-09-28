@@ -5,8 +5,7 @@ import { Word } from './word';
 
 @Component({
     selector: 'my-app',
-    templateUrl: './../templates/app.html',
-    styleUrls: ['./../css/app.css']
+    templateUrl: './../templates/app.html'
 })
 
 export class AppComponent {

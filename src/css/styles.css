@@ -13,7 +13,9 @@ h2, h3 {
 }
 
 body {
-  margin: 2em;
+  margin: auto;
+  width: 80%;
+  /* background-color: #F3F6FD; */
 }
 
 body, input[text], button {
@@ -48,28 +50,78 @@ button:disabled {
   cursor: auto;
 }
 
+
+/* Add new word */
+
+#add-component {
+  /* float: right; */
+  clear: both;
+}
+
+#add-component input, #add-component select {
+  width: 150px;
+  height: 26px;
+  border-radius: 15px;
+  padding-left: 15px;
+  font-size: 16px;
+  outline: none;
+  color: #777777;
+  border: 1px solid #eeeeee;
+}
+
+
 /* Navigation link styles */
+
+.nouns-a {
+  background-color: #E7A8C6;
+}
+
+.verbs-a {
+  background-color: #B5D9CC;
+}
+
+.adjs-a {
+  background-color: #FDD483;
+}
+
 nav a {
+  width: 20%;
+  font-size: 20px;
+  line-height: 40px;
   padding: 5px 10px;
   text-decoration: none;
   margin-right: 10px;
   margin-top: 10px;
   display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
+  text-align: center;
+  color: #FFF!important;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
+
 nav a:visited, a:link {
   color: #607D8B;
 }
+
 nav a:hover {
-  color: #039be5;
-  background-color: #CFD8DC;
+  /* font-weight: bolder; */
+  font-size: 24px;
+  line-height: 40px;
 }
+
 nav a.active {
   color: #039be5;
 }
+
+.words-box {
+  border: 1px solid #eee;
+}
+
+
 /* everywhere else */
 
 * {
   font-family: Arial, Helvetica, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
 }

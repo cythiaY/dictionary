@@ -30,8 +30,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        templateUrl: './../templates/app.html',
-        styleUrls: ['./../css/app.css']
+        templateUrl: './../templates/app.html'
     }),
     __metadata("design:paramtypes", [word_service_1.WordService])
 ], AppComponent);

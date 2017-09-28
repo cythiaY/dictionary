@@ -17,7 +17,6 @@ export class WordDetailComponent implements OnInit {
         private route: ActivatedRoute,
         private wordService: WordService,
         private location: Location
-
     ) { }
     ngOnInit(): void {
         this.route.paramMap.switchMap((params: ParamMap) => this.wordService.getWord(+params.get('id')))

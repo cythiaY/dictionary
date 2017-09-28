@@ -1,6 +1,7 @@
 <h1>{{title}}</h1>
 <word-search></word-search>
-<div>
+<h2>HOW MANY ABOUT YOUR WORDS ?</h2>
+<div id="add-component">
     <label>Word:</label><input #wordEg />
     <label>Explain:</label><input #wordExplain />
     <label>Type:</label>
@@ -12,8 +13,8 @@
     <button (click)="add(wordEg.value,wordExplain.value,wordType.value);wordEg.value='';wordExplain.value='';wordType.value=''">Add</button>
 </div>
 <nav>
-    <a routerLink="/nouns">N O U N</a>
-    <a routerLink="/verbs">V E R B</a>
-    <a routerLink="/adjustive">A D J U S T I V E</a>
+    <a routerLink="/nouns" class="nouns-a">N O U N</a>
+    <a routerLink="/verbs" class="verbs-a">V E R B</a>
+    <a routerLink="/adjustive" class="adjs-a">A D J U S T I V E</a>
 </nav>
 <router-outlet><router-outlet>
