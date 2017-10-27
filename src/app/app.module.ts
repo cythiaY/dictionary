@@ -20,7 +20,7 @@ import { AdjustiveComponent } from './adjustives.component';
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule, // <-- import the FormsModule before binding with [(ngModel)]
+    FormsModule, // 用于[(ngModel)]双向绑定
     AppRoutingModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)

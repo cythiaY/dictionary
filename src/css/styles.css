@@ -72,16 +72,39 @@ button:disabled {
 
 /* Navigation link styles */
 
+.nouns-a, .verbs-a, .adjs-a {
+  box-shadow: 5px -5px 5px #DDDDDD;
+}
+
 .nouns-a {
+  color: #E7A8C6!important;
+}
+
+.nouns-a:hover {
   background-color: #E7A8C6;
+  color: #FFFFFF!important;
 }
 
 .verbs-a {
+  color: #B5D9CC!important;
+}
+
+.verbs-a:hover {
   background-color: #B5D9CC;
+  color: #FFFFFF!important;
 }
 
 .adjs-a {
+  color: #FDD483!important;
+}
+
+.adjs-a:hover {
   background-color: #FDD483;
+  color: #FFFFFF!important;
+}
+
+nav {
+  margin-top: 20px;
 }
 
 nav a {
@@ -104,9 +127,8 @@ nav a:visited, a:link {
 }
 
 nav a:hover {
-  /* font-weight: bolder; */
-  font-size: 24px;
   line-height: 40px;
+  /* color: #DDDDDD; */
 }
 
 nav a.active {
